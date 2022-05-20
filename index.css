@@ -4,19 +4,85 @@
     box-sizing: border-box;
 }
 
+:root {
+    --headerFontSize : 2rem;
+    --header: 20px;
+    --height: calc(100vh - var(--header) - var(--headerFontSize) - 0.5rem);
+}
+
 header {
     text-align: center;
     padding: 10px;
-    font-size: 2rem;
+    font-size: var(--headerFontSize);
     background-color: black;
     color: white;
 }
 
+.menu {
+    width: 100%;
+    height: var(--height);
+    font-size: 2rem;
+}
+
+.menu__container {
+    padding: 0 100px;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(5 , 1fr);
+    justify-content: center;
+    align-content: center;
+}
+
+.menu__item {
+    overflow: hidden;
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.menu__item:hover {
+    transform: scale(1.2);
+}
+
+.menu__item-text {
+    font-size: 2rem;
+    width: 90%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-top: 10px;
+    /* margin-bottom: -10px; */
+    border-radius: 30px;
+    flex-wrap: wrap;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+}
+
+.menu__item_pictureContainer{
+    width: 100%;
+    height: 50%;
+    text-align: center;
+}
+.menu__item_pictureContainer img {
+    height: 100%;
+    width: auto;
+}
+
 main {
     position: absolute;
-    padding-top: 20px;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: var(--height);
     background-color: green;
     font-size: 3rem;
 }
@@ -37,4 +103,20 @@ footer {
     justify-content: center;
     font-size: 2rem;
 
+}
+
+.pink {
+    background-color: pink;
+}
+.yellow {
+    background-color: yellow;
+}
+.blue {
+    background-color: lightblue;
+}
+.orange {
+    background-color: orange;
+}
+.red{
+    background-color: lightcoral;
 }

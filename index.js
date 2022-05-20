@@ -25,9 +25,16 @@ let QuestionVoice = new SpeechSynthesisUtterance();
 QuestionVoice.lang = 'en-US';
 QuestionVoice.volume = 0.5;
 
+QuestionVoice.addEventListener('end', ()=> {
+    // do something here
+});
 
 speak.addEventListener('click', () => {
     QuestionVoice.text = Question.innerHTML;
+
     window.speechSynthesis.speak(QuestionVoice);
+    
 })
 
+let Voice = window.SpeechSynthesisVoice;
+console.log(Voice);
